@@ -15,11 +15,14 @@ cc<!DOCTYPE html>
                 <i class='bx bxl-html5'></i>
                 <div class="logo_name">Sidebar</div>
             </div>
-            <i class='bx bx-menu' id="btn" ></i>
+            <div onclick="toggleSidebar()">
+                <i class='bx bx-menu' id="btn" ></i>
+                
+            </div>
         </div>
         <ul class="nav_list">
             <li>
-                <i class='bx bx-search' ></i>
+                <i class='bx bx-search' onclick="toggleSidebar()"></i>
                 <input type="text" placeholder="Search..."/>
                 <span class="tooltip">Search</span>
             </li>
@@ -97,15 +100,11 @@ cc<!DOCTYPE html>
         <div class="text">Home Content</div>
     </div>
     <script>
-        let btn = document.querySelector("#btn");
-        let sidebar = document.querySelector(".sidebar");
-        let searchBtn = document.querySelector("bx-search");
+        
 
-        btn.onClick = function(){
-            sidebar.classList.toggle('active');
-        }
-        searchBtn.onClick = function(){
-            sidebar.classList.toggle('active');
+        function toggleSidebar() {
+            console.log("Botão clicado");
+            document.querySelector(".sidebar").classList.toggle("active");
         }
     </script>
 </body>
